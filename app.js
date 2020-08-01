@@ -11,6 +11,92 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 const render = require("./lib/htmlRenderer");
 
 
+// We add user input to this array.
+let team =[];
+
+
+
+// This functions prompts user with the kind of team they want to build.
+
+function build () {
+    return inquirer.prompt ([{
+
+        type : "list",
+        message: " Please pick a role from the choices",
+        name: "role",
+        choices:["Manager", "Engineer", "Intern"],
+    }
+])
+
+.then(input => {
+    
+})
+
+
+
+
+
+
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
