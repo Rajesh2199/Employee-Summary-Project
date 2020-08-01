@@ -22,27 +22,81 @@ function build () {
     return inquirer.prompt ([{
 
         type : "list",
-        message: " Please pick a role from the choices",
+        message: " Please pick a role from the choices to add a team member",
         name: "role",
         choices:["Manager", "Engineer", "Intern"],
     }
 ])
 
 .then(input => {
-    
+    switch(input.role) {
+        case "Manager" :
+            enterManager();
+            break;
+
+        case "Engineer" :
+            enterEngineer();
+            break;
+
+         case "Intern" :
+            enterIntern();
+            break;
+
+    }
+})
+}
+
+// functions for input for each role (Manager, Engineer, and Intern)
+
+function addManager (){
+    inquirer.prompt([
+{
+    type: "input",
+    name : "name",
+    message: "Enter the name of the Manager",
+
+},
+{
+    type: "input",
+    name : "id",
+    message: "Enter the employee ID for the manager."
+},
+{
+    type: "input",
+    name :"email",
+    message: "Enter the email for the manager."
+
+},
+{
+    type: "input",
+    name : "officeNumber",
+    message: "Enter the office number for the manager"
+}
+ ])
+
+
+.then (input => {
+    const manager = new Manager (input.name, input.id, input.email, input.officeNumber);
+    team.push(manager);
+    build ();
 })
 
-
-
-
-
-
-    
 }
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+    
 
 
 
