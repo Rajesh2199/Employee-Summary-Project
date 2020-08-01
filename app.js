@@ -42,6 +42,9 @@ function build () {
             addIntern();
             break;
 
+        case "My team is complete":
+        render(team);
+        creatHtml();
     }
 })
 }
@@ -77,6 +80,7 @@ function addManager (){
 
 .then (input => {
     const manager = new Manager (input.name, input.id, input.email, input.officeNumber);
+    // Adding variable manager into team array.
     team.push(manager);
     build ();
 })
@@ -155,6 +159,15 @@ function addIntern (){
     team.push(intern);
     build ();
 })
+
+}
+
+
+
+// Function to print all the user input into HTML
+
+function creatHtml () {
+    fs.writeFileSync(outputPath, render(team));
 
 }
 
