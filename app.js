@@ -31,15 +31,15 @@ function build () {
 .then(input => {
     switch(input.role) {
         case "Manager" :
-            enterManager();
+            addManager();
             break;
 
         case "Engineer" :
-            enterEngineer();
+            addEngineer();
             break;
 
          case "Intern" :
-            enterIntern();
+            addIntern();
             break;
 
     }
@@ -84,7 +84,79 @@ function addManager (){
 }
 
 
+// Input for the Engineer.
 
+function addEngineer (){
+    inquirer.prompt([
+{
+    type: "input",
+    name : "name",
+    message: "Enter the name of the Engineer",
+
+},
+{
+    type: "input",
+    name : "id",
+    message: "Enter the employee ID for the engineer."
+},
+{
+    type: "input",
+    name :"email",
+    message: "Enter the email for the engineer."
+
+},
+{
+    type: "input",
+    name : "github",
+    message: "Enter the Github username for the engineer"
+}
+ ])
+
+
+.then (input => {
+    const engineer = new Engineer (input.name, input.id, input.email, input.github);
+    team.push(engineer);
+    build ();
+})
+
+}
+
+
+// Input for the intern.
+function addIntern (){
+    inquirer.prompt([
+{
+    type: "input",
+    name : "name",
+    message: "Enter the name of the Intern",
+
+},
+{
+    type: "input",
+    name : "id",
+    message: "Enter the employee ID for the intern."
+},
+{
+    type: "input",
+    name :"email",
+    message: "Enter the email for the intern."
+
+},
+{
+    type: "input",
+    name : "school",
+    message: "Enter the school name of the intern"
+}
+ ])
+
+
+.then (input => {
+    const intern = new Intern (input.name, input.id, input.email, input.school);
+    team.push(intern);
+    build ();
+})
+
+}
 
 
 
