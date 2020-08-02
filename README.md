@@ -6,7 +6,7 @@ A Command Line Interface application that allows user to build a custom engineer
 
 
 ## Screenshot
-![Employee Summary 1]()
+![Employee Summary 1](summary.png)
 
 
 
