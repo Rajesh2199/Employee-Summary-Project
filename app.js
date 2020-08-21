@@ -19,7 +19,7 @@ let team =[];
 // This functions prompts user with the kind of team they want to build.
 
 function build () {
-    return inquirer.prompt ([{
+    inquirer.prompt ([{
 
         type : "list",
         message: " Please pick a role from the choices to add a team member",
@@ -162,7 +162,7 @@ function addIntern (){
 
 }
 
-
+build ();
 
 // Function to print all the user input into HTML
 
@@ -170,6 +170,8 @@ function creatHtml () {
     fs.writeFileSync(outputPath, render(team));
 
 }
+
+
 
 
 
