@@ -24,7 +24,7 @@ function build () {
         type : "list",
         message: " Please pick a role from the choices to add a team member",
         name: "role",
-        choices:["Manager", "Engineer", "Intern"],
+        choices:["Manager", "Engineer", "Intern", "My team is complete"],
     }
 ])
 
@@ -43,8 +43,8 @@ function build () {
             break;
 
         case "My team is complete":
-        render(team);
-        creatHtml();
+        //render(team);
+        createHtml(team);
     }
 })
 }
@@ -166,10 +166,12 @@ build ();
 
 // Function to print all the user input into HTML
 
-function creatHtml () {
+function createHtml () {
     fs.writeFileSync(outputPath, render(team));
 
 }
+
+createHtml ();
 
 
 
